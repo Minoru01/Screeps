@@ -33,7 +33,7 @@ var roleHarvester = {
                 targets = creep.room.find(FIND_FLAGS);
                 creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
-            console.log('test');
+            console.log('katze');
         }
 	}
 };
