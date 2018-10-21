@@ -75,4 +75,4 @@ var djikstraAlgorithm = {
     }
 };
 
-module.exports = djikstraAlgorithm;
+module.exports = djikstraAlgorithm

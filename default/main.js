@@ -8,7 +8,7 @@ var roleHealer = require('role.healer');
 var roleConquerer = require('role.conquerer');
 var roleTester = require('role.tester');
 var roleSuperHarvesterFinal = require('role.superharvesterfinal');
-var djikstraAlgorithm = require('djikstra')
+
 
 
 module.exports.loop = function () {

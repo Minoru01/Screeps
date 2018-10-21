@@ -1,10 +1,10 @@
-//var djikstra = require('Konsole');
+var djikstraAlgorithm = require('djikstra')
 
 var roleTester = {
     run: function(creep) {
-        var targets = creep.room;
+        targets = creep.room.find();
         console.log(targets);
-    //djikstraAlgorithm.run();
+    djikstraAlgorithm.run()
         
     }
 };
