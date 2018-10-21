@@ -4,7 +4,7 @@ var roleTester = {
     run: function(creep) {
         targets = creep.room.find();
         console.log(targets);
-    djikstraAlgorithm.run()
+    console.log(djikstraAlgorithm.run());
         
     }
 };
