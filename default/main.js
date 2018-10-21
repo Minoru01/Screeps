@@ -8,11 +8,12 @@ var roleHealer = require('role.healer');
 var roleConquerer = require('role.conquerer');
 var roleTester = require('role.tester');
 var roleSuperHarvesterFinal = require('role.superharvesterfinal');
+var djikstraAlgorithm = require('djikstra')
+
 
 module.exports.loop = function () {
     var spawn = Game.getObjectById('5bc0c92b556d327dc52703b7');
     spawn.renewCreep(spawn.pos.findClosestByRange(FIND_MY_CREEPS));
-    
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     console.log('Harvesters: ' + harvesters.length);
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
@@ -68,7 +69,7 @@ module.exports.loop = function () {
         }
     }
     var source = Game.getObjectById('5bbcadfc9099fc012e6383f3');
-    if(superharvesterfinals.length < 1) {    //         
+    if(superharvesterfinals.length < 0) {    //         
             var newName = 'Superharvesterfinal' + Game.time;
             console.log('Spawning new superharvesterfinal: ' + newName);
             Game.spawns['Schneiderr1'].spawnCreep([WORK,MOVE], newName, 
@@ -80,7 +81,7 @@ module.exports.loop = function () {
         Game.spawns['Schneiderr1'].spawnCreep([CLAIM,MOVE], newName, 
             {memory: {role: 'conquerer'}});
     }
-    if(testers.length < 0) {
+    if(testers.length < 1) {
         var newName = 'Tester' + Game.time;
         console.log('Spawning new tester: ' + newName);
         Game.spawns['Schneiderr1'].spawnCreep([MOVE], newName, 
@@ -113,7 +114,7 @@ module.exports.loop = function () {
             Game.spawns['Schneiderr1'].spawnCreep([CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], newName, 
                 {memory: {role: 'hauler'}});
         }
-        if(upgraders.length < 3) {
+        if(upgraders.length < 2) {
             var newName = 'Upgrader' + Game.time;
             console.log('Spawning new upgrader: ' + newName);
             Game.spawns['Schneiderr1'].spawnCreep([WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE], newName, 

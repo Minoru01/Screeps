@@ -2,9 +2,9 @@
 
 var roleTester = {
     run: function(creep) {
-        targets = creep.room.find(FIND_EXIT);
+        var targets = creep.room;
         console.log(targets);
-    //Konsole.djikstraAlgorithm
+    //djikstraAlgorithm.run();
         
     }
 };
